@@ -88,6 +88,8 @@ def linear_regression(X: np.ndarray, y: np.ndarray, weird_n=0.01, iterations=10)
     w = np.random.rand(X.shape[1])
     bias = np.random.rand(1)
     
+    cost_history = []
+    
     for i in range(iterations):
         y_hat = X @ w + bias
         dl_dw = X.T @ (y_hat - y)
@@ -99,13 +101,15 @@ def linear_regression(X: np.ndarray, y: np.ndarray, weird_n=0.01, iterations=10)
         w = w - weird_n * dj_dw
         bias = bias - weird_n * dj_db
         
+        cost = (1/(2*m)) * np.sum((y_hat - y)**2)
+        cost_history.append(cost)
+        
         if i % 100 == 0 or i == iterations - 1:
-            cost = (1/(2*m)) * np.sum((y_hat - y)**2)
             print(f"Iteration {i}, Cost: {cost}")
     
-    return w, bias
+    return w, bias, cost_history
 
-w, b = linear_regression(X_train, y_train, iterations=1000)
+w, b, cost_history = linear_regression(X_train, y_train, iterations=1000)
 
 print(f"\nWeights: {w}")
 print(f"Bias: {b}")
@@ -122,8 +126,74 @@ def evaluate(X, y, w, b):
     
     return np.vstack([["        y       ", "        y_hat      "], np.column_stack((y, y_hat))]), test_cost
 
+def plot_cost_history(cost_history, filename='cost_history.png', output_dir='output_figs/gradient_descent'):
+    """
+    Plot training cost over iterations.
+    
+    Parameters:
+    -----------
+    cost_history : list
+        List of cost values at each iteration
+    filename : str
+        Output filename
+    output_dir : str
+        Directory to save the plot
+    """
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.plot(range(len(cost_history)), cost_history, linewidth=2, color='blue')
+    ax.set_xlabel('Iteration', fontsize=12)
+    ax.set_ylabel('Cost (MSE)', fontsize=12)
+    ax.set_title('Training Cost over Iterations', fontsize=14)
+    ax.grid(True, alpha=0.3)
+    plt.tight_layout()
+    
+    os.makedirs(output_dir, exist_ok=True)
+    filepath = os.path.join(output_dir, filename)
+    plt.savefig(filepath, dpi=150, bbox_inches='tight')
+    print(f"Cost history plot saved to: {filepath}")
+    plt.show()
+
+def plot_predictions(y_true, y_pred, filename='predictions.png', output_dir='output_figs/gradient_descent'):
+    """
+    Plot predictions vs true values.
+    
+    Parameters:
+    -----------
+    y_true : array-like
+        True target values
+    y_pred : array-like
+        Predicted values
+    filename : str
+        Output filename
+    output_dir : str
+        Directory to save the plot
+    """
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.scatter(y_true, y_pred, alpha=0.6, s=30)
+    ax.plot([y_true.min(), y_true.max()], [y_true.min(), y_true.max()], 
+            'r--', linewidth=2, label='Perfect Prediction')
+    ax.set_xlabel('True Values', fontsize=12)
+    ax.set_ylabel('Predictions', fontsize=12)
+    ax.set_title('Predictions vs True Values', fontsize=14)
+    ax.legend(fontsize=10)
+    ax.grid(True, alpha=0.3)
+    plt.tight_layout()
+    
+    os.makedirs(output_dir, exist_ok=True)
+    filepath = os.path.join(output_dir, filename)
+    plt.savefig(filepath, dpi=150, bbox_inches='tight')
+    print(f"Predictions plot saved to: {filepath}")
+    plt.show()
+
 tested_y, test_cost = evaluate(X_test, y_test, w, b)
 
 print("Tested y (Brevity - 5): \n", tested_y[:5])
 
 print(f"Total cost of test data: {test_cost}")
+
+# Plot results
+# Remove header row and extract columns
+y_true = tested_y[1:, 0].astype(float)
+y_pred = tested_y[1:, 1].astype(float)
+plot_cost_history(cost_history)
+plot_predictions(y_true, y_pred)
