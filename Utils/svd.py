@@ -128,4 +128,29 @@ for i in k_vals:
     img_save_str = f"output_figs/svd_image_compression/Rank_{i}.png"
     img.save(img_save_str)
     print(f"Image saved as Rank_{i}.png")
+
+print("\n")
+
+# Now we have just done on 2D without any channels like RGB,
+# I will try to do the RGB version as well.
+
+img_rgb = load_sample_image('flower.jpg')
+
+
+for k in k_vals:
+    channels_compressed = []
+
+    for c in range(3):
+        channel = img_rgb[:, :, c]
+        U, S, V = np.linalg.svd(channel)
+        
+        channel_k = U[:, :k] @ np.diag(S[:k]) @ V[:k, :]
+        channels_compressed.append(channel_k)
+        
+    img_compressed = np.stack(channels_compressed, axis=2)
+    img_compressed = np.clip(img_compressed, 0, 255).astype(np.uint8)
     
+    img = Image.fromarray(img_compressed)
+    img_save_str = f"output_figs/svd_image_compression/Rank_rgb_{k}.png"
+    img.save(img_save_str)
+    print(f"Image saved as Rank_rgb_{k}.png")
