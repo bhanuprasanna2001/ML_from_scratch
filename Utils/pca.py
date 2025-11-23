@@ -23,6 +23,8 @@
 # 1. The SVD tries to find the best rank-k approximaiton that minimized reconstruction error.
 # 2. The PCA tries to find k directions that maximize captured variance.
 
+# The PCA core idea is that we use it to find direction where the variance (spread) is largest.
+
 from jacobi_eigvv import *
 from sklearn.datasets import make_blobs
 import numpy as np
