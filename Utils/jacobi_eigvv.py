@@ -17,9 +17,9 @@ np.random.seed(42)
 # First we intialize epsilon
 eps = 0.000001
 
-A = np.random.randint(low=-2, high=3, size=(3,4))
+# A = np.random.randint(low=-2, high=3, size=(3,4))
 
-sym_A = A @ A.T
+# sym_A = A @ A.T
 
 
 # Step 1: Find the largest Non-Diagonal Element of the symmetric matrix
@@ -42,10 +42,10 @@ def largest_non_diagonal_element(A):
                 
 
 
-print(f"Original Matrix: \n{sym_A}")
-max_A, cord_A = largest_non_diagonal_element(sym_A)
-print(f"For sym_A matrix max: {max_A}, the co-ordinates: {cord_A}")
-print(f"Alternate same value: {sym_A[cord_A[1]][cord_A[0]]}, the co-ordinates: {cord_A[::-1]}")
+# print(f"Original Matrix: \n{sym_A}")
+# max_A, cord_A = largest_non_diagonal_element(sym_A)
+# print(f"For sym_A matrix max: {max_A}, the co-ordinates: {cord_A}")
+# print(f"Alternate same value: {sym_A[cord_A[1]][cord_A[0]]}, the co-ordinates: {cord_A[::-1]}")
 
 # It doesn't matter if we take i, j or j, i because both are same only because
 # it is a symmetric matrix.
@@ -57,8 +57,8 @@ def find_theta(A, i, j):
         
     return 0.5 * np.arctan((2 * A[i][j]) / (A[i][i] - A[j][j]))
 
-theta = find_theta(sym_A, cord_A[0], cord_A[1])
-print("Theta value: ", theta)
+# theta = find_theta(sym_A, cord_A[0], cord_A[1])
+# print("Theta value: ", theta)
 
 # Step 3: Find Orthogonal Matrix
 # Place the rotation matrix at the cord_A that has been obtained
@@ -80,7 +80,7 @@ def apply_rotation_to_sym(A, i, j, theta):
     
     return B, S
 
-print(apply_rotation_to_sym(sym_A, cord_A[0], cord_A[1], theta))
+# print(apply_rotation_to_sym(sym_A, cord_A[0], cord_A[1], theta))
 
 def jacobi_eigenvalue(A, max_iter=1000, tol=1e-10):
     # Finds jacobi eigen values and eigen vectors
@@ -113,12 +113,12 @@ def jacobi_eigenvalue(A, max_iter=1000, tol=1e-10):
     
     return eigenvalues, V
         
-eig_values, eig_vectors = jacobi_eigenvalue(sym_A)
+# eig_values, eig_vectors = jacobi_eigenvalue(sym_A)
 
-print(eig_values)
-print(eig_vectors)
+# print(eig_values)
+# print(eig_vectors)
 
-print(np.linalg.eig(sym_A))
+# print(np.linalg.eig(sym_A))
 
 # I have successfully implemented the eigenvalues and eigen vectors.
 # But haven't learnt the intiution of Jacobi iterate iterate iterate methodology.
