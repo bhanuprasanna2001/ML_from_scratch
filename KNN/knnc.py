@@ -142,7 +142,7 @@ class knn_weighted_classification:
             
             # Step 5: Weighted voting
             labels_idx = self.y_train[k_idx]
-            wv = np.bincount(labels_idx, weights=w) # I didn't know this, awesom.
+            wv = np.bincount(labels_idx, weights=w) # I didn't know this, awesome.
             
             # Step 6: Argmax
             label = np.argmax(wv)
