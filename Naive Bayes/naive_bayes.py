@@ -185,4 +185,7 @@ y_true = tested_y[1:, 0].astype(float).astype(int)
 y_pred = tested_y[1:, 1].astype(float).astype(int)
 plot_confusion_matrix(y_true, y_pred)
         
-    
+# But we can extend this to Bernoulli and Multinomial cases as well.
+# Currently we have data like where the features have numerical values like size, length.
+# But bernoulli, has only 0 or 1 for every feature column. (Binary labels for features itself), the classes or output is different it can be many right.
+# But multinomial, has not only 0 or 1 but also 2 or 3 or 4 or ... n as well for every feature column. The output is different and can n classes.
