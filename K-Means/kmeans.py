@@ -36,7 +36,7 @@
 #       # Update Step
 #       For each cluster k:
 #           Recompute centroid as the mean of its assigned points
-#           u_k = (sigma(i = 1 to m) r_ik * x_i) / (sigma(i = 1 to m) r_ik) = (1 / n_k) * sigma(i = 1 to m) x_i
+#           u_k = (sigma(i = 1 to m) r_ik * x_i) / (sigma(i = 1 to m) r_ik) = (1 / n_k) * sigma(i = 1 to m, r_ik = 1) x_i
 #       # Convergence
 #       Stop when the assignments no longer change (or centroids move less than a certain tiny threshold
 #       or after some max iterations). The algorithm converges to a local minimum of J.
