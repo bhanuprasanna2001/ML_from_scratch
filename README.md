@@ -17,5 +17,7 @@ Completed Learning the following:
 - ✅ Naive Bayes
   - ✅ Naive Bayes
 - ✅ SVM
-  - ✅ SVC Soft Marging - Stochastic Sub Gradient Descent
+  - ✅ SVC Soft Margin - Stochastic Sub Gradient Descent
   - ✅ SVC SMO
+  - ✅ SVR
+  - ✅ SVC using CVXOPT
