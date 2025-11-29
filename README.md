@@ -7,3 +7,15 @@ Completed Learning the following:
 - ✅ Linear Regression
   - ✅ Closed Form
   - ✅ Gradient Descent
+- ✅ Logistic Regression
+  - ✅ Gradient Descent
+- ✅ KNN
+  - ✅ Weighted and Unweighted KNN Classification
+  - ✅ Weighted and Unweighted KNN Regression
+- ✅ K-Means
+  - ✅ K-Means
+- ✅ Naive Bayes
+  - ✅ Naive Bayes
+- ✅ SVM
+  - ✅ SVC Soft Marging - Stochastic Sub Gradient Descent
+  - ✅ SVC SMO
