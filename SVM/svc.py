@@ -97,6 +97,17 @@
 # Large C (eg. 1000): Higher training accuracy, tighter margin, less regularization, risk of overfitting, sensitive to outliers.
 # Only use when you have clean data, confident in labels, need high accuracy.
 
+# Let's give a short for SVC from hard margin to soft margin:
+# In hard margin it is linear seperation that is there is no scope for misclassification.
+# In soft margin, we introduce slack variables which allow us to add misclassification.
+# The C parameter is also there which is used to control how much misclassification is acceptable.
+
+# We introduce slack variables and also the C which is the regularization parameter that says how much misclassification is acceptable.
+# Our goal is to : 	Maximize margin and minimize misclassification penalty
+# As we have 2 things Maximize margin and minimize misclassification penalty, we have got ourselves the dual problem, so we introduce the langrangian multipliers to optimize this.
+# This lagrangian dual transformation allows us to add the kernel trick. It is easier to solve computationally the dual problem.
+# We introduce the constraints using new variables, the lagrangian multipliers (alpha_i).
+
 # Let's start Linear SVM through SGD (Sub Gradient Descent) implementation:
 
 import os

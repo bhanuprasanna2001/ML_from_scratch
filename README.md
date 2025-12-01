@@ -24,3 +24,6 @@ Completed Learning the following:
 - ✅ Decision Tree
   - ✅ Classifier
   - ✅ Regressor
+- ✅ Random Forest
+  - ✅ Classifier
+  - ✅ Regressor
