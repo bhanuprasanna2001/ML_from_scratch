@@ -363,12 +363,12 @@ def train_and_evaluate_decision_tree_regressor(X_train, y_train, X_test, y_test,
         
         # Save as PNG
         dot.format = 'png'
-        dot.render(f"{output_dir}/custom_tree_visualization", cleanup=True)
+        dot.render(f"{output_dir}/tree_visualization", cleanup=True)
         
         print(f"Plots saved in '{output_dir}/' directory:")
         print(f"  - predicted_vs_actual.png")
         print(f"  - residuals.png")
-        print(f"  - custom_tree_visualization.png\n")
+        print(f"  - tree_visualization.png\n")
     
     return decision_tree, y_pred, metrics
 
