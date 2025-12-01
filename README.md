@@ -21,3 +21,6 @@ Completed Learning the following:
   - ✅ SVC SMO
   - ✅ SVR
   - ✅ SVC using CVXOPT
+- ✅ Decision Tree
+  - ✅ Classifier
+  - ✅ Regressor
