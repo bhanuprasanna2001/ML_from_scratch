@@ -1,6 +1,10 @@
-# Thesis Prep
+# ML From Scratch
 
-I have started my thesis, so this is a short prep period of 30 days of revising concepts and implementing ML and DL Algorithms from scratch to brush up my knowledge.
+I have started my thesis, so this is a short prep period of 30 days of revising concepts and implementing ML from scratch to brush up my knowledge.
+
+TODO: Refactor code for clean practices.
+
+The DL from scratch is in a different repo.
 
 Completed Learning the following:
 
@@ -34,3 +38,5 @@ Completed Learning the following:
 References
 
 - [ML From Scratch by Erik Linder-Norén](https://github.com/eriklindernoren)
+- YouTube channels - ritvikmath, deepia, normalized nerd, 3blue1brown, mathspedia, visual kernel, and a lot more.
+- Medium articles.
