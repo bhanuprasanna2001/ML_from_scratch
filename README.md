@@ -27,3 +27,4 @@ Completed Learning the following:
 - ✅ Random Forest
   - ✅ Classifier
   - ✅ Regressor
+- ✅ Gradient Boosting
