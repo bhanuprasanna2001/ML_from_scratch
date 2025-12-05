@@ -28,3 +28,9 @@ Completed Learning the following:
   - ✅ Classifier
   - ✅ Regressor
 - ✅ Gradient Boosting
+
+- Used AI for plots.
+
+References
+
+- [ML From Scratch by Erik Linder-Norén](https://github.com/eriklindernoren)
