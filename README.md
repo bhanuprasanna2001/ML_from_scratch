@@ -38,5 +38,5 @@ Completed Learning the following:
 References
 
 - [ML From Scratch by Erik Linder-Norén](https://github.com/eriklindernoren)
-- YouTube channels - ritvikmath, deepia, normalized nerd, 3blue1brown, mathspedia, visual kernel, and a lot more.
+- YouTube channels - ritvikmath, deepia, normalized nerd, 3blue1brown, mathspedia, visual kernel, statquest with josh starmer, and a lot more.
 - Medium articles.
