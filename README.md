@@ -74,4 +74,4 @@ For in blog format refer to: [BLOG ML](https://bhanuprasanna2001.github.io/learn
 
 ## License
 
-Open for anybody.
+Open.
