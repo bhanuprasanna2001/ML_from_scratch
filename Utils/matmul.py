@@ -14,9 +14,9 @@ def matrix_multiplication(x, y):
     
     for i in range(x.shape[0]):
         sum_mat = []
-        for j in range(y.shape[1]):
+        for k in range(x.shape[1]):
             sum_num = 0
-            for k in range(x.shape[1]):
+            for j in range(y.shape[1]):
                 sum_num += x[i][k] * y[k][j]
             sum_mat.append(sum_num)
         final_mat.append(sum_mat)
