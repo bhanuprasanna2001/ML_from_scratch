@@ -1,6 +1,6 @@
 # Machine Learning from Scratch
 
-A comprehensive implementation of fundamental machine learning algorithms built from first principles using NumPy. This repository contains production-ready implementations of classical ML algorithms with detailed mathematical foundations and visualizations.
+This repository contains implementations of classical ML algorithms with detailed mathematical foundations and visualizations.
 
 ## Overview
 
